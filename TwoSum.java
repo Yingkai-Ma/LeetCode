@@ -44,3 +44,21 @@ class TwoSum {
         throw new IllegalArgumentException("Not found.");
     }
 }
+
+//second way has less time complexity
+/*
+class TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> num_map = new HashMap<>();
+        for(int i=0; i<nums.length; i++){
+            int secondNum = target - nums[i];
+            if(num_map.containsKey(secondNum)){
+                return new int[]{num_map.get(secondNum),i};
+            }
+            num_map.put(nums[i],i);
+        }
+        //if not then throw exception
+        throw new IllegalArgumentException("Not found.");
+    }
+}
+ */
